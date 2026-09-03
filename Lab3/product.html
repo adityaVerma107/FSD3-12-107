@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BGMI | Battlegrounds Mobile India</title>
+    <title>iPhone - Think Different</title>
 
     <style>
         * {
@@ -18,34 +18,28 @@
         }
 
         body {
-            background: #080808;
+            background: #000;
             color: white;
         }
 
-        /* NAVBAR */
+        /* Navbar */
         nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: 70px;
-            background: rgba(0, 0, 0, 0.85);
+            height: 65px;
+            background: rgba(0, 0, 0, 0.9);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 7%;
+            padding: 0 8%;
+            position: fixed;
+            top: 0;
+            width: 100%;
             z-index: 1000;
-            border-bottom: 1px solid #292929;
+            backdrop-filter: blur(10px);
         }
 
         .logo {
             font-size: 25px;
-            font-weight: 900;
-            color: #ffb400;
-            letter-spacing: 2px;
-        }
-
-        .logo span {
-            color: white;
+            font-weight: bold;
         }
 
         nav ul {
@@ -55,206 +49,179 @@
         }
 
         nav ul li a {
-            color: white;
+            color: #ddd;
             text-decoration: none;
             font-size: 14px;
-            font-weight: bold;
             transition: 0.3s;
         }
 
         nav ul li a:hover {
-            color: #ffb400;
+            color: white;
         }
 
-        .download-btn {
-            background: #ffb400;
-            color: #000;
-            padding: 12px 22px;
-            text-decoration: none;
-            font-weight: bold;
-            clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
-        }
-
-        /* HERO */
+        /* Hero */
         .hero {
             min-height: 100vh;
+            padding-top: 120px;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            padding: 100px 8% 50px;
-            position: relative;
-            overflow: hidden;
+            justify-content: center;
+            text-align: center;
             background:
-                linear-gradient(90deg, #050505 10%, rgba(5,5,5,.65), rgba(5,5,5,.15)),
-                radial-gradient(circle at 75% 50%, #5d4100 0%, #15120b 25%, #080808 65%);
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            right: -150px;
-            top: 100px;
-            background: #ffb400;
-            opacity: .08;
-            filter: blur(100px);
-            border-radius: 50%;
-        }
-
-        .hero-content {
-            max-width: 650px;
-            z-index: 2;
-        }
-
-        .small-title {
-            color: #ffb400;
-            font-size: 18px;
-            font-weight: bold;
-            letter-spacing: 5px;
-            margin-bottom: 15px;
+                radial-gradient(circle at center, #202020 0%, #050505 45%, #000 75%);
         }
 
         .hero h1 {
-            font-size: clamp(55px, 9vw, 105px);
-            line-height: .85;
-            font-weight: 1000;
-            text-transform: uppercase;
-            text-shadow: 5px 5px 0 #222;
+            font-size: 75px;
+            font-weight: 700;
+            letter-spacing: -4px;
+            animation: fadeIn 1s ease;
         }
 
-        .hero h1 span {
-            color: #ffb400;
+        .hero h2 {
+            font-size: 32px;
+            margin-top: 10px;
+            background: linear-gradient(90deg, #fff, #888);
+            -webkit-background-clip: text;
+            color: transparent;
         }
 
         .hero p {
-            margin-top: 30px;
-            color: #bbb;
-            line-height: 1.7;
-            max-width: 550px;
-            font-size: 16px;
+            color: #aaa;
+            margin: 20px 0;
+            font-size: 18px;
         }
 
-        .hero-buttons {
-            margin-top: 35px;
+        .buttons {
             display: flex;
-            gap: 18px;
+            gap: 15px;
+            margin-top: 15px;
         }
 
-        .primary-btn,
-        .secondary-btn {
-            padding: 16px 30px;
+        .btn {
+            padding: 13px 25px;
+            border-radius: 30px;
             text-decoration: none;
-            font-weight: bold;
-            transition: .3s;
+            font-size: 15px;
+            transition: 0.3s;
         }
 
-        .primary-btn {
-            background: #ffb400;
-            color: black;
-            clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%);
+        .buy {
+            background: #0071e3;
+            color: white;
         }
 
-        .secondary-btn {
+        .buy:hover {
+            background: #1488ff;
+            transform: scale(1.05);
+        }
+
+        .learn {
             border: 1px solid #555;
             color: white;
         }
 
-        .primary-btn:hover {
-            transform: translateY(-4px);
-            background: #ffc933;
+        .learn:hover {
+            background: white;
+            color: black;
         }
 
-        .secondary-btn:hover {
-            border-color: #ffb400;
-            color: #ffb400;
+        /* Phone */
+        .phone {
+            margin-top: 55px;
+            width: 230px;
+            height: 460px;
+            border: 8px solid #333;
+            border-radius: 42px;
+            background: linear-gradient(145deg, #303030, #080808);
+            box-shadow:
+                0 0 50px rgba(255, 255, 255, 0.12),
+                inset 0 0 20px #000;
+            position: relative;
+            animation: float 4s ease-in-out infinite;
         }
 
-        /* STATS */
-        .stats {
-            background: #111;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            padding: 30px 10%;
+        .phone::before {
+            content: "";
+            position: absolute;
+            width: 75px;
+            height: 22px;
+            background: #000;
+            border-radius: 20px;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .screen {
+            position: absolute;
+            top: 35px;
+            left: 7px;
+            right: 7px;
+            bottom: 7px;
+            border-radius: 32px;
+            background:
+                radial-gradient(circle at 30% 20%, #6a6a6a, transparent 30%),
+                linear-gradient(160deg, #111, #555, #111);
+            overflow: hidden;
+        }
+
+        .screen-text {
+            position: absolute;
+            top: 42%;
+            width: 100%;
             text-align: center;
-            border-top: 1px solid #292929;
-            border-bottom: 1px solid #292929;
         }
 
-        .stat h2 {
-            color: #ffb400;
-            font-size: 32px;
+        .screen-text h3 {
+            font-size: 25px;
         }
 
-        .stat p {
-            color: #888;
-            margin-top: 5px;
-            font-size: 13px;
+        .screen-text span {
+            color: #bbb;
+            font-size: 12px;
         }
 
-        /* SECTION */
-        section {
-            padding: 90px 8%;
-        }
-
-        .section-title {
+        /* Features */
+        .features {
+            padding: 100px 8%;
+            background: #0a0a0a;
             text-align: center;
-            margin-bottom: 50px;
         }
 
-        .section-title h2 {
-            font-size: 45px;
-            text-transform: uppercase;
+        .features h2 {
+            font-size: 50px;
+            margin-bottom: 60px;
         }
 
-        .section-title h2 span {
-            color: #ffb400;
-        }
-
-        .section-title p {
-            color: #888;
-            margin-top: 12px;
-        }
-
-        /* CARDS */
-        .cards {
+        .feature-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
 
         .card {
-            background: linear-gradient(145deg, #181818, #0d0d0d);
-            border: 1px solid #292929;
-            padding: 35px;
-            min-height: 260px;
-            position: relative;
-            overflow: hidden;
-            transition: .3s;
+            background: #151515;
+            padding: 40px 25px;
+            border-radius: 25px;
+            border: 1px solid #222;
+            transition: 0.4s;
         }
 
         .card:hover {
-            transform: translateY(-8px);
-            border-color: #ffb400;
+            transform: translateY(-10px);
+            border-color: #555;
         }
 
-        .card-number {
-            font-size: 70px;
-            color: #222;
-            font-weight: 900;
-            position: absolute;
-            right: 15px;
-            top: 5px;
-        }
-
-        .card-icon {
-            font-size: 40px;
-            margin-bottom: 25px;
+        .icon {
+            font-size: 45px;
+            margin-bottom: 20px;
         }
 
         .card h3 {
-            color: #ffb400;
-            font-size: 23px;
-            margin-bottom: 15px;
+            font-size: 22px;
+            margin-bottom: 12px;
         }
 
         .card p {
@@ -262,141 +229,133 @@
             line-height: 1.6;
         }
 
-        /* GAME MODES */
-        .modes {
-            background: #0e0e0e;
-        }
-
-        .mode-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-        }
-
-        .mode {
-            height: 220px;
-            background: linear-gradient(145deg, #1a1a1a, #080808);
-            border: 1px solid #292929;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 25px;
-            transition: .3s;
-        }
-
-        .mode:hover {
-            border-color: #ffb400;
-            transform: scale(1.03);
-        }
-
-        .mode h3 {
-            font-size: 22px;
-            color: white;
-        }
-
-        .mode p {
-            color: #777;
-            font-size: 13px;
-            margin-top: 7px;
-        }
-
-        /* CTA */
-        .cta {
+        /* Camera Section */
+        .camera {
+            padding: 120px 8%;
             text-align: center;
-            background:
-                linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.9)),
-                radial-gradient(circle, #6b4b00, #080808 65%);
+            background: linear-gradient(#000, #111);
         }
 
-        .cta h2 {
+        .camera h2 {
             font-size: 55px;
-            text-transform: uppercase;
+            margin-bottom: 20px;
         }
 
-        .cta h2 span {
-            color: #ffb400;
-        }
-
-        .cta p {
+        .camera p {
             color: #aaa;
-            margin: 20px auto 30px;
-            max-width: 600px;
-            line-height: 1.6;
+            max-width: 650px;
+            margin: auto;
+            line-height: 1.7;
+            font-size: 18px;
         }
 
-        /* FOOTER */
+        .camera-box {
+            margin: 60px auto 0;
+            max-width: 700px;
+            height: 300px;
+            border-radius: 30px;
+            background:
+                radial-gradient(circle at 35% 45%, #777, transparent 12%),
+                radial-gradient(circle at 60% 55%, #444, transparent 15%),
+                linear-gradient(135deg, #111, #333);
+            box-shadow: 0 20px 70px rgba(255,255,255,0.08);
+        }
+
+        /* Price */
+        .price {
+            padding: 100px 20px;
+            text-align: center;
+            background: #0b0b0b;
+        }
+
+        .price h2 {
+            font-size: 50px;
+        }
+
+        .price p {
+            color: #aaa;
+            margin: 15px 0 25px;
+        }
+
+        .price strong {
+            font-size: 35px;
+            display: block;
+            margin-bottom: 25px;
+        }
+
+        /* Footer */
         footer {
-            background: #050505;
-            border-top: 1px solid #222;
-            padding: 35px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #666;
+            padding: 30px;
+            text-align: center;
+            color: #777;
+            background: #000;
             font-size: 13px;
         }
 
-        footer strong {
-            color: #ffb400;
+        /* Animations */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-18px);
+            }
         }
 
-        /* MOBILE */
-        @media(max-width: 900px) {
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+
+            nav {
+                padding: 0 5%;
+            }
 
             nav ul {
                 display: none;
             }
 
-            .hero {
-                text-align: center;
-                justify-content: center;
+            .hero h1 {
+                font-size: 52px;
+            }
+
+            .hero h2 {
+                font-size: 25px;
             }
 
             .hero p {
-                margin-left: auto;
-                margin-right: auto;
+                font-size: 15px;
+                padding: 0 20px;
             }
 
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .cards {
+            .feature-container {
                 grid-template-columns: 1fr;
             }
 
-            .mode-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media(max-width: 600px) {
-
-            .stats {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-
-            .mode-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 60px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .cta h2 {
+            .features h2,
+            .camera h2,
+            .price h2 {
                 font-size: 38px;
             }
 
-            footer {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
+            .phone {
+                width: 200px;
+                height: 400px;
+            }
+
+            .camera-box {
+                height: 200px;
             }
         }
     </style>
@@ -404,189 +363,134 @@
 
 <body>
 
-    <!-- NAVBAR -->
+    <!-- Navbar -->
     <nav>
-        <div class="logo">BGMI<span> INDIA</span></div>
+        <div class="logo"> iPhone</div>
 
         <ul>
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#features">FEATURES</a></li>
-            <li><a href="#modes">MODES</a></li>
-            <li><a href="#download">DOWNLOAD</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#camera">Camera</a></li>
+            <li><a href="#buy">Buy</a></li>
         </ul>
-
-        <a href="#download" class="download-btn">PLAY NOW</a>
     </nav>
 
 
-    <!-- HERO -->
+    <!-- Hero Section -->
     <section class="hero" id="home">
 
-        <div class="hero-content">
+        <h1>iPhone</h1>
 
-            <div class="small-title">BATTLEGROUNDS MOBILE INDIA</div>
-
-            <h1>
-                WIN<br>
-                <span>THE</span><br>
-                BATTLE
-            </h1>
-
-            <p>
-                Enter the ultimate battle royale experience.
-                Gear up, team up with your squad and fight your
-                way to become the last player standing.
-            </p>
-
-            <div class="hero-buttons">
-                <a href="#download" class="primary-btn">
-                    DOWNLOAD GAME
-                </a>
-
-                <a href="#features" class="secondary-btn">
-                    EXPLORE BGMI
-                </a>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- STATS -->
-    <div class="stats">
-
-        <div class="stat">
-            <h2>100</h2>
-            <p>PLAYERS PER MATCH</p>
-        </div>
-
-        <div class="stat">
-            <h2>4</h2>
-            <p>PLAYER SQUAD</p>
-        </div>
-
-        <div class="stat">
-            <h2>#1</h2>
-            <p>LAST PLAYER STANDING</p>
-        </div>
-
-    </div>
-
-
-    <!-- FEATURES -->
-    <section id="features">
-
-        <div class="section-title">
-            <h2>GAME <span>FEATURES</span></h2>
-            <p>Everything you need to dominate the battleground.</p>
-        </div>
-
-        <div class="cards">
-
-            <div class="card">
-                <div class="card-number">01</div>
-                <div class="card-icon">🎯</div>
-                <h3>TACTICAL COMBAT</h3>
-                <p>
-                    Master weapons, positioning and movement
-                    to gain an advantage over your opponents.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="card-number">02</div>
-                <div class="card-icon">👥</div>
-                <h3>SQUAD UP</h3>
-                <p>
-                    Build your squad, communicate with teammates
-                    and fight together for the Chicken Dinner.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="card-number">03</div>
-                <div class="card-icon">🏆</div>
-                <h3>RANKED BATTLES</h3>
-                <p>
-                    Compete against players, climb the ranks
-                    and prove that you have what it takes.
-                </p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- MODES -->
-    <section class="modes" id="modes">
-
-        <div class="section-title">
-            <h2>GAME <span>MODES</span></h2>
-            <p>Choose your battlefield.</p>
-        </div>
-
-        <div class="mode-grid">
-
-            <div class="mode">
-                <h3>BATTLE ROYALE</h3>
-                <p>Be the last one standing.</p>
-            </div>
-
-            <div class="mode">
-                <h3>TEAM DEATHMATCH</h3>
-                <p>Fast-paced team combat.</p>
-            </div>
-
-            <div class="mode">
-                <h3>CLASSIC MODE</h3>
-                <p>Drop in and survive.</p>
-            </div>
-
-            <div class="mode">
-                <h3>ARCADE</h3>
-                <p>Quick matches. Pure action.</p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- DOWNLOAD CTA -->
-    <section class="cta" id="download">
-
-        <h2>READY TO <span>DROP?</span></h2>
+        <h2>Designed to impress.</h2>
 
         <p>
-            Gather your squad and prepare for battle.
-            The battleground is waiting for you.
+            Powerful. Elegant. Extraordinary.
+            Experience the next generation of iPhone.
         </p>
 
-        <a href="#" class="primary-btn">
-            DOWNLOAD BGMI
+        <div class="buttons">
+            <a href="#buy" class="btn buy">Buy Now</a>
+            <a href="#features" class="btn learn">Learn More</a>
+        </div>
+
+        <!-- Phone Mockup -->
+        <div class="phone">
+
+            <div class="screen">
+
+                <div class="screen-text">
+                    <h3>Hello.</h3>
+                    <span>Beautifully powerful.</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Features -->
+    <section class="features" id="features">
+
+        <h2>Built for greatness.</h2>
+
+        <div class="feature-container">
+
+            <div class="card">
+                <div class="icon">⚡</div>
+                <h3>Super Fast</h3>
+                <p>
+                    Experience incredible performance with
+                    next-generation processing power.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🔋</div>
+                <h3>All-Day Battery</h3>
+                <p>
+                    Stay connected, entertained and productive
+                    throughout your entire day.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🔒</div>
+                <h3>Privacy First</h3>
+                <p>
+                    Your personal information stays personal
+                    with powerful privacy features.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Camera -->
+    <section class="camera" id="camera">
+
+        <h2>Capture the moment.</h2>
+
+        <p>
+            Take stunning photos and cinematic videos in almost
+            any lighting condition. Every detail comes to life.
+        </p>
+
+        <div class="camera-box"></div>
+
+    </section>
+
+
+    <!-- Buy Section -->
+    <section class="price" id="buy">
+
+        <h2>Your next iPhone.</h2>
+
+        <p>Available in multiple finishes and storage options.</p>
+
+        <strong>Starting at ₹79,900</strong>
+
+        <a href="#" class="btn buy" onclick="buyPhone()">
+            Buy iPhone
         </a>
 
     </section>
 
 
-    <!-- FOOTER -->
+    <!-- Footer -->
     <footer>
-
-        <div>
-            <strong>BGMI INDIA</strong>
-        </div>
-
-        <div>
-            © 2026 BGMI Fan Website — Concept Design
-        </div>
-
-        <div>
-            MADE FOR GAMERS
-        </div>
-
+        © 2026 iPhone Promotional Website | Created for demonstration
     </footer>
+
+
+    <script>
+        function buyPhone() {
+            alert("Thank you for choosing iPhone! 🛍️");
+        }
+    </script>
 
 </body>
 </html>
