@@ -14,7 +14,7 @@ const writeData = async (filename, content)=>{
 try {
     await writeFile(filename, content);
 } catch (error) {
-    console.error("Error writing file:", error);
+    console.error("Error writing in file:", error);
     throw error;
 }
 }
