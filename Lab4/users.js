@@ -15,7 +15,16 @@ let users = [
 
 let nextId = 3;
 
-export const getUsers = () => users;
+const getAllUsers = () => {
+    return users;
+}
+
+const getUserById = (pid) => {
+   const found = users.find((user)=>user.id === pid)
+   return found;
+
+}
+
 
 export const addUser = (user) => {
     user.id = nextId++;
