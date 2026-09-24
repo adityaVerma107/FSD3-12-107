@@ -31,3 +31,14 @@ export const addUser = (user) => {
     users.push(user);
     return user;
 }
+
+const updateUser = (pid, updateData)=>{
+    const index = users.findIndex((user)=> user.id === pid);
+    if (index == -1) {
+         return false;
+    }
+    updateData.id = pid;
+    users[index] = updateData;
+    return updateData;
+ }
+       
