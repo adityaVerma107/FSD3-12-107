@@ -15,11 +15,11 @@ let users = [
 
 let nextId = 3;
 
-const getAllUsers = () => {
+export const getAllUsers = () => {
     return users;
 }
 
-const getUserById = (pid) => {
+export const getUserById = (pid) => {
    const found = users.find((user)=>user.id === pid)
    return found;
 
@@ -32,7 +32,7 @@ export const addUser = (user) => {
     return user;
 }
 
-const updateUser = (pid, updateData)=>{
+export const updateUser = (pid, updateData)=>{
     const index = users.findIndex((user)=> user.id === pid);
     if (index == -1) {
          return false;
@@ -40,5 +40,13 @@ const updateUser = (pid, updateData)=>{
     updateData.id = pid;
     users[index] = updateData;
     return updateData;
- }
+}
+
+export const deleteUser = (pid)=>{
+    const index = users.findIndex((user)=> user.id === pid);
+    if (index == -1) {
+         return false;
+    }
+    users.splice(index, 1);
+}
        
