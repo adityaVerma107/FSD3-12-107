@@ -9,8 +9,16 @@ const dirname = path.dirname(filename)
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(dirname,"pages", "product.html"));
-})
+});
 
+app.get("/contact", (req, res) => {
+    res.sendFile(path.join(dirname,"pages", "contact.html"));
+});
+
+// this root must be last 👇
+app.use((req, res) => {
+    res.status(404).send("<h1>page not found</h1>");
+});
 
 
 
