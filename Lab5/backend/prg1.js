@@ -28,4 +28,4 @@ app.get("/products", (req, res) => {
    
 
 // this line must be last line 👇
-app.listen(4444, () => console.log("prg1.js is running on port 4444"));
+app.listen(4444, () => console.log("prg1.js is Running on port 4444"));

@@ -17,7 +17,7 @@ app.get("/contact", (req, res) => {
 
 // this root must be last 👇
 app.use((req, res) => {
-    res.status(404).send("<h1>page not found</h1>");
+    res.status(404).send("<h1> Page not found</h1>");
 });
 
 
