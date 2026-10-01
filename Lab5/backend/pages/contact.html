@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Product Enquiry</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f6f8;
+            color: #333;
+        }
+
+        header {
+            background: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 16px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+            display: flex;
+            gap: 30px;
+        }
+
+        .contact-info,
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-form {
+            flex: 1.5;
+        }
+
+        h2 {
+            color: #1e3a8a;
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            margin: 20px 0;
+        }
+
+        .info-item strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 13px;
+            border: none;
+            border-radius: 6px;
+            background: #1e3a8a;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #162d6b;
+        }
+
+        footer {
+            text-align: center;
+            background: #1e3a8a;
+            color: white;
+            padding: 15px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Contact Us</h1>
+        <p>Have a question about our products? Send us an enquiry!</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h2>Get In Touch</h2>
+
+            <div class="info-item">
+                <strong>📍 Address</strong>
+                123 Business Street, New Delhi, India
+            </div>
+
+            <div class="info-item">
+                <strong>📞 Phone</strong>
+                +91 98765 43210
+            </div>
+
+            <div class="info-item">
+                <strong>📧 Email</strong>
+                enquiry@example.com
+            </div>
+
+            <div class="info-item">
+                <strong>🕒 Business Hours</strong>
+                Monday - Saturday<br>
+                9:00 AM - 6:00 PM
+            </div>
+        </div>
+
+        <!-- Product Enquiry Form -->
+        <div class="contact-form">
+            <h2>Product Enquiry</h2>
+
+            <form onsubmit="submitForm(event)">
+
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter your phone number" required>
+
+                <label for="product">Select Product</label>
+                <select id="product" required>
+                    <option value="">-- Select a Product --</option>
+                    <option>iPhone</option>
+                    <option>Laptop</option>
+                    <option>Smart Watch</option>
+                    <option>Headphones</option>
+                    <option>Other</option>
+                </select>
+
+                <label for="quantity">Quantity</label>
+                <input type="number" id="quantity" min="1" placeholder="Enter quantity">
+
+                <label for="message">Your Enquiry</label>
+                <textarea id="message" placeholder="Write your enquiry here..." required></textarea>
+
+                <button type="submit">Submit Enquiry</button>
+
+            </form>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Your Company. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+
+            alert("Thank you! Your product enquiry has been submitted.");
+
+            document.querySelector("form").reset();
+        }
+    </script>
+
+</body>
+</html>
